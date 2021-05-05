@@ -1,0 +1,48 @@
+.text-center {
+  text-align: center !important;
+}
+.py-5 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+.px-4 {
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+
+.my-2 {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.my-t-3 {
+  margin-top: 0.75rem !important;
+}
+
+.my-5 {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+}
+
+.row {
+  display: inline;
+}
+
+.card {
+  width: 10rem;
+  height: 12rem;
+  background-color: #E5E5E5;
+}
+
+.card-title {
+  font-size: 1rem;
+}
+
+.profile {
+  margin: auto;
+  height: 6rem;
+  width: 6rem;
+  background-color: #BBB;
+  border-radius: 50%;
+  display: inline-block;
+}
