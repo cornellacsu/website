@@ -3,21 +3,53 @@ import React from "react";
 import "./Sidebar.css";
 import { useState, useEffect, useRef } from "react";
 import { Link, withRouter } from "react-router-dom";
+import eboard from './icons/eboard.svg';
+import academic from './icons/academic.svg';
+import corporate from './icons/corporate.svg';
+import graphicDesign from './icons/graphic-design.svg';
+import social from './icons/social.svg';
+import webDev from './icons/web-dev.svg';
 
-import logo from "./icons/logo.png";
-import home from "./icons/house-white.png";
-import homeActive from "./icons/house-red.png";
-import board from "./icons/officers-white.svg";
-import boardActive from "./icons/officers-red.svg";
-import sponsers from "./icons/donation-white.svg";
-import sponsersActive from "./icons/donation-red.svg";
-import resources from "./icons/resources-white.png";
-import resourcesActive from "./icons/resources-red.png";
+function Sidebar({ parentCallback }) {
+  parentCallback('two');
 
-function Sidebar(props) {
   return (
-    <div class="sidebar">
-      Sidebar
+    <div className="sidebar">
+      <div className="container">
+        <div>
+          <ul className="sidebar-menu">
+            <SidebarItem
+              imgSrc={eboard}
+              name="Eboard"
+              onClick={parentCallback}
+            />
+            <SidebarItem
+              imgSrc={academic}
+              name="Academic"
+            />
+            <SidebarItem
+              imgSrc={corporate}
+              name="Corporate"
+            />
+            <SidebarItem
+              imgSrc={graphicDesign}
+              name="Graphic Design"
+            />
+            <SidebarItem
+              imgSrc={social}
+              name="Social"
+            />
+            <SidebarItem
+              imgSrc={webDev}
+              name="Web Dev"
+            />
+            <SidebarItem
+              imgSrc={eboard}
+              name="Publicity"
+            />
+          </ul>
+        </div>
+      </div>
     </div>
     // <nav className="navbar navbar-expand ">
     //   <div className="container">
@@ -45,42 +77,22 @@ function Sidebar(props) {
 }
 
 function SidebarItem(props) {
-  const [open, setOpen] = useState(false);
   const SidebarItemRef = useRef();
-
-  // Click away to collapse the menu
-  useEffect(() => {
-    document.addEventListener("click", handleClickOutside, true);
-    return () => {
-      document.removeEventListener("click", handleClickOutside, true);
-    };
-  }, []);
-
-  const handleClickOutside = (event) => {
-    const domNode = SidebarItemRef.current;
-
-    if (!domNode || !domNode.contains(event.target)) {
-      setOpen(false);
-    }
-  };
+  const setPageName = props.onClick;
+  console.log(typeof (props.onClick));
 
   return (
-    <li className={"sidebar-item"} ref={SidebarItemRef}>
-      <Link
-        className="icon-button"
-        to={props.target}
-        onClick={() => setOpen(!open)}>
-        <img
-          src={
-            props.currentPath === props.target
-              ? props.activeImgSrc
-              : props.imgSrc
-          }
-          alt={props.name}
-        />
-      </Link>
-      {open && props.children}
-    </li>
+    <div className={"sidebar-item-container"}>
+      <p>{props.name}</p>
+      <li className={"sidebar-item"} ref={SidebarItemRef}>
+        <Link
+          className="icon-button"
+          to={props.target}
+        >
+          <img src={props.imgSrc} alt={props.name} />
+        </Link>
+        {props.children}
+      </li></div>
   );
 }
 
