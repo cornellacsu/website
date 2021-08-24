@@ -51,34 +51,13 @@ function Sidebar({ parentCallback }) {
         </div>
       </div>
     </div>
-    // <nav className="navbar navbar-expand ">
-    //   <div className="container">
-    //     <div>
-    //       <ul className="navbar-nav">
-    //         <SidebarItem
-    //           currentPath={props.location.pathname}
-    //           target="/"
-    //           name="Home"
-    //           imgSrc={home}
-    //           activeImgSrc={homeActive}
-    //         />
-    //         <SidebarItem
-    //           currentPath={props.location.pathname}
-    //           target="/board"
-    //           name="Board"
-    //           imgSrc={board}
-    //           activeImgSrc={boardActive}
-    //         />
-    //       </ul>
-    //     </div>
-    //   </div>
-    // </nav>
   );
 }
 
 function SidebarItem(props) {
   const SidebarItemRef = useRef();
   const setPageName = props.onClick;
+  console.log(props.name, " clicked");
   console.log(typeof (props.onClick));
 
   return (
