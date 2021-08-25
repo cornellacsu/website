@@ -1,43 +1,49 @@
-import React, { useState } from "react";
-import Sidebar from "../Sidebar/Sidebar";
-import styles from "./Board.css";
+import React, { useState, useEffect } from "react";
+import Sidebar from '../Sidebar/Sidebar';
+import Card from '../Card/Card';
+import officerJson from '../../data/officers2122.json';
 
 function Board() {
-    const [pageName, setPageName] = useState('Board');
+    const [pageName, setPageName] = useState('Academic');
+    const [officers, setOfficers] = useState(null);
 
-    const callback = (name) => {
+    const setName = (name) => {
         setPageName(name)
     };
 
+    const loadOfficerData = (json, teamName) => {
+        const officers = json.officers.filter(person => {
+            if (person.team === teamName) return person;
+        });
+        return officers;
+    };
+
+    const renderOfficers = officers => {
+        const officerElts = []
+        officers.forEach((elt) => {
+            officerElts.push(
+                <Card name={elt.name} team={elt.team} img={elt.img} />
+            )
+        });
+        return officerElts
+    };
+
+    useEffect(() => {
+        const officerData = loadOfficerData(officerJson, pageName);
+        setOfficers(renderOfficers(officerData));
+    }, [])
+
     return (
         <div className="board">
-            <div class="container">
-                <Sidebar parentCallback={callback} />
-                <div class="row align-items-center my-5">
-                    <div class="col-lg-5">
-                        <h1 class="font-weight-light">{pageName}</h1>
-                        <div class="row px-4">
-                            <div class="card my-4">
-                                <h4 class="card-title text-center my-t-3">Member Name</h4>
-                                <h4 class="card-title text-center my-2">Officer</h4>
-                                <div class="profile"></div>
-                            </div>
-                            <div class="card my-4">
-                                <h4 class="card-title text-center my-t-3">Member Name</h4>
-                                <h4 class="card-title text-center my-2">Officer</h4>
-                                <div class="profile"></div>
-                            </div>
-                            <div class="card my-4">
-                                <h4 class="card-title text-center my-t-3">Member Name</h4>
-                                <h4 class="card-title text-center my-2">Officer</h4>
-                                <div class="profile"></div>
-                            </div>
-                            <div class="card my-4">
-                                <h4 class="card-title text-center my-t-3">Member Name</h4>
-                                <h4 class="card-title text-center my-2">Officer</h4>
-                                <div class="profile"></div>
-                            </div>
-                        </div>
+            <div className="container">
+                <Sidebar onClick={setName} />
+                <div className="align-items-center my-5">
+                    <div>
+                        <h1 className="font-weight-light">{pageName}</h1>
+                        {/* <div class="row px-4">
+                            <Card name="hi" team="oficer" />
+                        </div> */}
+                        <div className="row px-4">{officers}</div>
                     </div>
                 </div>
             </div>

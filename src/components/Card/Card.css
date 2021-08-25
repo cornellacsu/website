@@ -1,0 +1,35 @@
+.card {
+  width: 10rem;
+  height: 12rem;
+  margin: 1rem;
+  background-color: #EEE;
+}
+
+.card-title {
+  margin-top: 0.7rem;
+  font-size: 1rem;
+}
+
+.profile {
+  margin: auto;
+  height: 6rem;
+  width: 6rem;
+  background-color: #BBB;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.image-cropper {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.image-cropper img {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}

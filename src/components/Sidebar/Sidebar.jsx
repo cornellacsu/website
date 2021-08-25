@@ -2,7 +2,7 @@
 import React from "react";
 import "./Sidebar.css";
 import { useState, useEffect, useRef } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import eboard from './icons/eboard.svg';
 import academic from './icons/academic.svg';
 import corporate from './icons/corporate.svg';
@@ -10,9 +10,7 @@ import graphicDesign from './icons/graphic-design.svg';
 import social from './icons/social.svg';
 import webDev from './icons/web-dev.svg';
 
-function Sidebar({ parentCallback }) {
-  parentCallback('two');
-
+function Sidebar({ setName }) {
   return (
     <div className="sidebar">
       <div className="container">
@@ -21,31 +19,37 @@ function Sidebar({ parentCallback }) {
             <SidebarItem
               imgSrc={eboard}
               name="Eboard"
-              onClick={parentCallback}
+              onClick={setName}
             />
             <SidebarItem
               imgSrc={academic}
               name="Academic"
+              onClick={setName}
             />
             <SidebarItem
               imgSrc={corporate}
               name="Corporate"
+              onClick={setName}
             />
             <SidebarItem
               imgSrc={graphicDesign}
               name="Graphic Design"
+              onClick={setName}
             />
             <SidebarItem
               imgSrc={social}
               name="Social"
+              onClick={setName}
             />
             <SidebarItem
               imgSrc={webDev}
               name="Web Dev"
+              onClick={setName}
             />
             <SidebarItem
               imgSrc={eboard}
               name="Publicity"
+              onClick={setName}
             />
           </ul>
         </div>
@@ -56,23 +60,21 @@ function Sidebar({ parentCallback }) {
 
 function SidebarItem(props) {
   const SidebarItemRef = useRef();
-  const setPageName = props.onClick;
-  console.log(props.name, " clicked");
-  console.log(typeof (props.onClick));
+  const setName = props.onClick;
+  if (props.target === props.name) console.log(props.name);
 
   return (
     <div className={"sidebar-item-container"}>
       <p>{props.name}</p>
-      <li className={"sidebar-item"} ref={SidebarItemRef}>
+      <li className={"sidebar-item"} ref={SidebarItemRef} onClick={() => setName(props.name)}>
         <Link
-          className="icon-button"
-          to={props.target}
-        >
+          className="icon-button">
           <img src={props.imgSrc} alt={props.name} />
         </Link>
         {props.children}
-      </li></div>
+      </li>
+    </div>
   );
 }
 
-export default withRouter(Sidebar);
+export default Sidebar;
