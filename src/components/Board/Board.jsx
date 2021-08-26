@@ -31,7 +31,7 @@ function Board() {
     useEffect(() => {
         const officerData = loadOfficerData(officerJson, pageName);
         setOfficers(renderOfficers(officerData));
-    }, [])
+    });
 
     return (
         <div className="board">
@@ -40,9 +40,6 @@ function Board() {
                 <div className="align-items-center my-5">
                     <div>
                         <h1 className="font-weight-light">{pageName}</h1>
-                        {/* <div class="row px-4">
-                            <Card name="hi" team="oficer" />
-                        </div> */}
                         <div className="row px-4">{officers}</div>
                     </div>
                 </div>

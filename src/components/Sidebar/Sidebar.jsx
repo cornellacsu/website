@@ -10,7 +10,7 @@ import graphicDesign from './icons/graphic-design.svg';
 import social from './icons/social.svg';
 import webDev from './icons/web-dev.svg';
 
-function Sidebar({ setName }) {
+function Sidebar({ onClick }) {
   return (
     <div className="sidebar">
       <div className="container">
@@ -19,37 +19,37 @@ function Sidebar({ setName }) {
             <SidebarItem
               imgSrc={eboard}
               name="Eboard"
-              onClick={setName}
+              onClick={onClick}
             />
             <SidebarItem
               imgSrc={academic}
               name="Academic"
-              onClick={setName}
+              onClick={onClick}
             />
             <SidebarItem
               imgSrc={corporate}
               name="Corporate"
-              onClick={setName}
+              onClick={onClick}
             />
             <SidebarItem
               imgSrc={graphicDesign}
               name="Graphic Design"
-              onClick={setName}
+              onClick={onClick}
             />
             <SidebarItem
               imgSrc={social}
               name="Social"
-              onClick={setName}
+              onClick={onClick}
             />
             <SidebarItem
               imgSrc={webDev}
               name="Web Dev"
-              onClick={setName}
+              onClick={onClick}
             />
             <SidebarItem
               imgSrc={eboard}
               name="Publicity"
-              onClick={setName}
+              onClick={onClick}
             />
           </ul>
         </div>
@@ -61,7 +61,6 @@ function Sidebar({ setName }) {
 function SidebarItem(props) {
   const SidebarItemRef = useRef();
   const setName = props.onClick;
-  if (props.target === props.name) console.log(props.name);
 
   return (
     <div className={"sidebar-item-container"}>

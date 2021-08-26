@@ -8,9 +8,10 @@ function Card(props) {
       <h4 className="card-title text-center my-t-3">{props.name}</h4>
       <h4 className="card-title text-center my-2">{props.team}</h4>
       <div className="image-cropper">
-        <img src={require("../../img/team/" + props.img)} />
+        {/* Need to require local images in React */}
+        {/* Webpack loads image object modules -> need to call .default to get src attribute */}
+        <img src={require("../../img/team/" + props.img).default} />
       </div>
-      <img src={require("./Xinyu.jpg")}></img>
     </div>
   );
 }
