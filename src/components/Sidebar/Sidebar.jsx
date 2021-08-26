@@ -1,7 +1,7 @@
 // import Navbar from "react-bootstrap/Navbar";
 import React from "react";
 import "./Sidebar.css";
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import eboard from './icons/eboard.svg';
 import academic from './icons/academic.svg';

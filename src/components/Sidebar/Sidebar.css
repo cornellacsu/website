@@ -57,7 +57,6 @@ a {
   font-size: 4rem;
   padding: 1rem;
 }
-
 /* Icon Button */
 .icon-button {
   --button-size: calc(var(--nav-size) * 0.6);
