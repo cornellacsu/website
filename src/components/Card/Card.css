@@ -1,6 +1,6 @@
 .card {
   width: 10rem;
-  height: 12rem;
+  height: 13rem;
   margin: 1rem;
   background-color: #EEE;
 }
@@ -8,6 +8,11 @@
 .card-title {
   margin-top: 0.7rem;
   font-size: 1rem;
+}
+
+.card-mail {
+  margin: 0 4.375rem;
+  width: 15%;
 }
 
 .image-cropper {

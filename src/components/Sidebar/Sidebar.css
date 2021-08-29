@@ -39,6 +39,7 @@ a {
 /* <div> */
 .sidebar-item-container {
   display: flex;
+  justify-content: space-between;
 }
 
 /* <li> */

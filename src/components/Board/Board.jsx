@@ -13,7 +13,7 @@ function Board() {
 
     const loadOfficerData = (json, teamName) => {
         const officers = json.officers.filter(person => {
-            if (person.team === teamName) return person;
+            return person ? person.team === teamName : null;
         });
         return officers;
     };
@@ -22,7 +22,7 @@ function Board() {
         const officerElts = []
         officers.forEach((elt) => {
             officerElts.push(
-                <Card name={elt.name} team={elt.team} img={elt.img} />
+                <Card name={elt.name} team={elt.team} img={elt.img} email={elt.email} />
             )
         });
         return officerElts

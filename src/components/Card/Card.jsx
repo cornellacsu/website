@@ -10,8 +10,11 @@ function Card(props) {
       <div className="image-cropper">
         {/* Need to require local images in React */}
         {/* Webpack loads image object modules -> need to call .default to get src attribute */}
-        <img src={require("../../img/team/" + props.img).default} />
+        <img src={require("../../img/team/" + props.img).default} alt={props.name} />
       </div>
+      <a href={"mailto:" + props.email}>
+        <img className="card-mail" src={require("../../img/email.png").default} alt={props.email}></img>
+      </a>
     </div>
   );
 }
