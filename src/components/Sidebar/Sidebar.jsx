@@ -2,13 +2,7 @@
 import React from "react";
 import "./Sidebar.css";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
-import eboard from './icons/eboard.svg';
-import academic from './icons/academic.svg';
-import corporate from './icons/corporate.svg';
-import graphicDesign from './icons/graphic-design.svg';
-import social from './icons/social.svg';
-import webDev from './icons/web-dev.svg';
+import { Link } from 'react-router-dom';
 
 function Sidebar({ onClick }) {
   return (
@@ -17,37 +11,30 @@ function Sidebar({ onClick }) {
         <div>
           <ul className="sidebar-menu">
             <SidebarItem
-              imgSrc={eboard}
               name="Eboard"
               onClick={onClick}
             />
             <SidebarItem
-              imgSrc={academic}
               name="Academic"
               onClick={onClick}
             />
             <SidebarItem
-              imgSrc={corporate}
               name="Corporate"
               onClick={onClick}
             />
             <SidebarItem
-              imgSrc={graphicDesign}
               name="Graphic Design"
               onClick={onClick}
             />
             <SidebarItem
-              imgSrc={social}
               name="Social"
               onClick={onClick}
             />
             <SidebarItem
-              imgSrc={webDev}
               name="Web Dev"
               onClick={onClick}
             />
             <SidebarItem
-              imgSrc={eboard}
               name="Publicity"
               onClick={onClick}
             />
@@ -64,14 +51,12 @@ function SidebarItem(props) {
 
   return (
     <div className={"sidebar-item-container"}>
-      <p>{props.name}</p>
-      <li className={"sidebar-item"} ref={SidebarItemRef} onClick={() => setName(props.name)}>
-        <Link
-          className="icon-button">
-          <img src={props.imgSrc} alt={props.name} />
-        </Link>
-        {props.children}
-      </li>
+      <Link className={"sidebar-item-link"} onClick={() => setName(props.name)}>
+        {props.name}
+        <li className={"sidebar-item"} ref={SidebarItemRef}>
+          {props.children}
+        </li>
+      </Link>
     </div>
   );
 }

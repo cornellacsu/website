@@ -5,7 +5,7 @@ import officerJson from '../../data/officers2122.json';
 
 function Board() {
     const [pageName, setPageName] = useState('Academic');
-    const [officers, setOfficers] = useState(null);
+    const [officers, setOfficers] = useState([]);
 
     const setName = (name) => {
         setPageName(name)
@@ -22,7 +22,7 @@ function Board() {
         const officerElts = []
         officers.forEach((elt) => {
             officerElts.push(
-                <Card name={elt.name} team={elt.team} img={elt.img} email={elt.email} />
+                <Card name={elt.name} team={elt.team} img={elt.img} email={elt.email} eboard={elt.eboard} />
             )
         });
         return officerElts
@@ -31,7 +31,7 @@ function Board() {
     useEffect(() => {
         const officerData = loadOfficerData(officerJson, pageName);
         setOfficers(renderOfficers(officerData));
-    });
+    }, [pageName]);
 
     return (
         <div className="board">

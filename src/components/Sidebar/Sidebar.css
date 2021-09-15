@@ -52,39 +52,10 @@ a {
 }
 
 /* <a> */
-.sidebar-item a {
+.sidebar-item-link {
   margin: -1rem 0 0 1rem;
-  background-color: white;
-  font-size: 4rem;
+  color: black;
+  font-size: 1rem;
   padding: 1rem;
-}
-/* Icon Button */
-.icon-button {
-  --button-size: calc(var(--nav-size) * 0.6);
-  width: var(--button-size);
-  height: var(--button-size);
-  background-color: #484a4d;
-  border-radius: 50%;
-  padding: 5px;
-  margin: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: filter 300ms;
-}
-
-.icon-button:hover {
-  filter: brightness(1.5);
-}
-
-.icon-button img {
-  fill: var(--text-color);
-  width: 20px;
-  height: 20px;
-}
-
-.icon-button svg {
-  fill: var(--text-color);
-  width: 20px;
-  height: 20px;
+  width: 100%;
 }
