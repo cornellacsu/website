@@ -1,22 +1,26 @@
 body {
     margin: 0;
     background: #151616;
-    font-family: roboto;
+    font-family: "HelveticaNeue", "Roboto";
+    src: local("HelveticaNeue"),
+        url(./fonts/HelveticaNeue/HelveticaNeueLTPro-Th.otf) format("truetype");
+    src: local("Roboto") url(./fonts/Roboto/Roboto-Regular.ttf)
+        format("truetype");
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
-}
+} */
 
 :root {
-    --bg: #242526;
+    --bg: white;
     --bg-accent: #484a4d;
     --text-color: #dadce1;
     --nav-size: 60px;
-    --border: 1px solid #474a4d;
+    --border: 1px solid white;
     --border-radius: 8px;
     --speed: 500ms;
 }
