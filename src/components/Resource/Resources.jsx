@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Resources/CSS/Resources.css";
 import Section from "./Resources/Components/Section";
 import SideBar from "./Resources/Components/SideBar";
+import Sidebar from "../Sidebar/Sidebar";
 
 class Resources extends Component {
   constructor(props) {
@@ -40,6 +41,7 @@ class Resources extends Component {
           changeSection={this.changeSection}
           checkSection={this.checkSection}
         />
+        {/* <Sidebar onClick={this.changeSection} /> */}
       </div>
     );
   }

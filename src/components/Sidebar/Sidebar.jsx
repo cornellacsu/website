@@ -4,54 +4,38 @@ import "./Sidebar.css";
 import { useRef } from "react";
 import { Link } from 'react-router-dom';
 
-function Sidebar({ onClick }) {
+// Sidebar takes in a list of elements to display as SidebarItems that have a name and onClick function
+function Sidebar(props) {
+  const onClick = props.onClick;
+  const elts = props.elts;
+
+  const renderSidebarItems = elts => {
+    const items = [];
+    elts.forEach(elt => {
+      items.push(<SidebarItem name={elt.name} onClick={elt.onClick} param={elt.param} />);
+    })
+    return items;
+  }
+
+  const sidebarItems = renderSidebarItems(elts);
+
   return (
     <div className="sidebar">
-      <div className="container">
-        <div>
-          <ul className="sidebar-menu">
-            <SidebarItem
-              name="Eboard"
-              onClick={onClick}
-            />
-            <SidebarItem
-              name="Academic"
-              onClick={onClick}
-            />
-            <SidebarItem
-              name="Corporate"
-              onClick={onClick}
-            />
-            <SidebarItem
-              name="Graphic Design"
-              onClick={onClick}
-            />
-            <SidebarItem
-              name="Social"
-              onClick={onClick}
-            />
-            <SidebarItem
-              name="Web Dev"
-              onClick={onClick}
-            />
-            <SidebarItem
-              name="Publicity"
-              onClick={onClick}
-            />
-          </ul>
-        </div>
-      </div>
+      <ul className="sidebar-menu">
+        {sidebarItems}
+      </ul>
     </div>
   );
 }
 
 function SidebarItem(props) {
   const SidebarItemRef = useRef();
-  const setName = props.onClick;
+  const onClick = props.onClick;
+  console.log(props.param)
 
   return (
     <div className={"sidebar-item-container"}>
-      <Link className={"sidebar-item-link"} onClick={() => setName(props.name)}>
+      <Link className={"sidebar-item-link"} onClick={() => props.param != null ? onClick(props.param) : onClick}>
         {props.name}
         <li className={"sidebar-item"} ref={SidebarItemRef}>
           {props.children}

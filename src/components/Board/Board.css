@@ -1,0 +1,11 @@
+.officers {
+  margin-left: 2rem;
+}
+
+.board {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin: auto;
+  max-width: 800px;
+}

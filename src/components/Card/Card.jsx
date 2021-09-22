@@ -6,17 +6,16 @@ function Card(props) {
     <div className="card my-4">
       <div className="image-cropper">
         {/* Need to require local images in React */}
-        {/* Webpack loads image object modules -> need to call .default to get src attribute */}
-        <img src={require("../../img/team/" + props.img).default} alt={props.name} />
+        <img src={require("../../img/team/" + props.img)} alt={props.name} />
       </div>
       {
         props.eboard != null &&
         <a href={"mailto:" + props.email}>
-          <img className="card-mail" src={require("../../img/email.png").default} alt={props.email}></img>
+          <img className="card-mail" src={require("../../img/email.png")} alt={props.email}></img>
         </a>
 
       }
-      <h4 className="card-title text-center my-t-3">{props.name}</h4>
+      <h4 className="card-title text-center">{props.name}</h4>
     </div>
   );
 }
