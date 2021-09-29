@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 // Sidebar takes in a list of elements to display as SidebarItems that have a name and onClick function
 function Sidebar(props) {
-  const onClick = props.onClick;
   const elts = props.elts;
 
   const renderSidebarItems = elts => {
@@ -31,7 +30,6 @@ function Sidebar(props) {
 function SidebarItem(props) {
   const SidebarItemRef = useRef();
   const onClick = props.onClick;
-  console.log(props.param)
 
   return (
     <div className={"sidebar-item-container"}>

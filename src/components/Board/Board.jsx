@@ -77,7 +77,7 @@ function Board() {
                 <Sidebar elts={elts} onClick={setName} />
                 <div>
                     <h1 className="font-weight-light">{pageName}</h1>
-                    <div className="officers row px-4">{officers}</div>
+                    <div className="row px-5 officers">{officers}</div>
                 </div>
             </div>
         </div>

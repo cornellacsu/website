@@ -10,7 +10,7 @@ function Card(props) {
       </div>
       {
         props.eboard != null &&
-        <a href={"mailto:" + props.email}>
+        <a href={"mailto:" + props.email + "@cornell.edu"}>
           <img className="card-mail" src={require("../../img/email.png")} alt={props.email}></img>
         </a>
 

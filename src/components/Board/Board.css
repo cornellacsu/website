@@ -1,5 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
+
+.container {
+  margin: auto;
+  width: 80%;
+}
+
 .officers {
-  margin-left: 2rem;
+  width: calc(85% - 140px) !important;
+  min-width: 200px;
 }
 
 .board {
@@ -8,4 +17,12 @@
   position: relative;
   margin: auto;
   max-width: 800px;
+}
+
+.topbar {
+  margin: auto;
+}
+
+h1 {
+  font-family: "Lato";
 }
