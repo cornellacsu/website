@@ -13,15 +13,15 @@ export const MainNav = styled.nav<StyledProps>`
 `;
 
 export const MainNavItem = motion.custom(styled(Link)`
-  ${tw`relative text-indigo-900 border-b border-transparent hover:text-indigo-900 ml-0 sm:ml-8 mt-3 sm:mt-0`};
+  ${tw`relative text-black-900 border-b border-transparent hover:text-red-900 ml-0 sm:ml-8 mt-3 sm:mt-0`};
   width: max-content;
 
   &.active {
-    ${tw`border-teal-400`};
+    ${tw`text-red-900 border-red-800`};
   }
 
   &:before {
-    ${tw`absolute w-full bg-teal-400 h-px left-0 invisible`};
+    ${tw`absolute w-full bg-red-800 h-px left-0 invisible`};
     content: '';
     bottom: -1px;
     transform: scaleX(0);
