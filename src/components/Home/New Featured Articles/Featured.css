@@ -1,0 +1,25 @@
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+}
+
+.event-card {
+  flex: 0 0 auto;
+  margin-right: 2rem;
+  min-width: 275px;
+}
+
+.media {
+  min-height: 400px;
+}
+
+.scrolling-wrapper-flexbox {
+  height: 100%;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.arrow-button:focus {
+  outline: none;
+}

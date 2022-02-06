@@ -4,6 +4,7 @@ import Roles from "./Roles.jsx";
 import Events from "./Events.jsx";
 import gates from "./images/gates.svg";
 import { Fade } from "react-awesome-reveal";
+import FeaturedArticles from "./New Featured Articles/Featured";
 
 const Landing = (props) => {
     return <div className="gates-logo">{props.children}</div>;
@@ -59,7 +60,8 @@ function Home() {
             </Section>
             <Fade triggerOnce>
                 <h1>Featured Articles</h1>
-                <Events />
+                {/* <Events /> */}
+                <FeaturedArticles />
             </Fade>
         </div>
     );

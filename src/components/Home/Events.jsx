@@ -23,7 +23,6 @@ const Arrow = ({ children, disabled, onClick }) => {
                 opacity: disabled ? "0" : "1",
                 userSelect: "none",
 
-                // Styling
                 backgroundColor: "white",
                 border: "none",
             }}>
